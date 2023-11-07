@@ -1,0 +1,62 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'recording_model.dart';
+
+// **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class YourModelAdapter extends TypeAdapter<YourModel> {
+  @override
+  final int typeId = 4;
+
+  @override
+  YourModel read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return YourModel(
+      title: fields[0] as String,
+      sessionId: fields[1] as int,
+      bogglingTimeAndData: fields[2] as DateTime,
+      voiceText: fields[3] as String,
+      summary: fields[4] as String,
+      nextStep: fields[5] as String,
+      recommendations: fields[6] as String,
+      suggestions: fields[7] as String,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, YourModel obj) {
+    writer
+      ..writeByte(8)
+      ..writeByte(0)
+      ..write(obj.title)
+      ..writeByte(1)
+      ..write(obj.sessionId)
+      ..writeByte(2)
+      ..write(obj.bogglingTimeAndData)
+      ..writeByte(3)
+      ..write(obj.voiceText)
+      ..writeByte(4)
+      ..write(obj.summary)
+      ..writeByte(5)
+      ..write(obj.nextStep)
+      ..writeByte(6)
+      ..write(obj.recommendations)
+      ..writeByte(7)
+      ..write(obj.suggestions);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is YourModelAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
